@@ -1,40 +1,44 @@
 {
   "name": "react-mvvm-generator",
-	"displayName": "React MVVM Generator",
-	"description": "This package is used to create mvvm components for react",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.69.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-        "onCommand:react-mvvm-generator.createComponent"
-	],
-	"main": "./extension.js",
-	"contributes": {
-		"commands": [{
-            "command": "react-mvvm-generator.createComponent",
-            "title": "RMV: Component"
-
-		}]
-	},
-	"scripts": {
-		"lint": "eslint .",
-		"pretest": "yarn run lint",
-		"test": "node ./test/runTest.js"
-	},
-	"devDependencies": {
-        "@types/vscode": "^1.69.0",
-        "@types/glob": "^7.2.0",
-        "@types/mocha": "^9.1.1",
-        "@types/node": "16.x",
-        "eslint": "^8.18.0",
-        "glob": "^8.0.3",
-        "mocha": "^10.0.0",
-        "typescript": "^4.7.4",
-        "@vscode/test-electron": "^2.1.5"
-    }
-
+  "displayName": "React MVVM Generator",
+  "description": "This package is used to create mvvm components for react",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sushinpv/vscode-extension-react-mvvm-generator.git"
+  },
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:react-mvvm-generator.createComponent"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "react-mvvm-generator.createComponent",
+        "title": "RMV: Component"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.69.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "eslint": "^8.18.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4",
+    "@vscode/test-electron": "^2.1.5"
+  }
 }
