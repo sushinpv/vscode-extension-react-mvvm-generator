@@ -10,13 +10,13 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:react-mvvm-generator.helloWorld"
+        "onCommand:react-mvvm-generator.createComponent"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [{
-            "command": "react-mvvm-generator.helloWorld",
-            "title": "Hello World"
+            "command": "react-mvvm-generator.createComponent",
+            "title": "RMV: Component"
 
 		}]
 	},
