@@ -15,7 +15,6 @@ To use the extension, use the following commands
 *   This will create a folder called components and inside the folder it create component called `tool-bar`
 * Option 2: Provide only component name in step 2:
 *   Then you will get a GUI folder selection option to choose destination folder
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
 
 ## Release Notes
 
