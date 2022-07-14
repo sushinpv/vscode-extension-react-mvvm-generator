@@ -3,6 +3,7 @@
   "displayName": "React MVVM Generator",
   "description": "This package is used to create mvvm components for react",
   "version": "0.0.1",
+  "publisher": "sushinpv",
   "repository": {
     "type": "git",
     "url": "git@github.com:sushinpv/vscode-extension-react-mvvm-generator.git"
