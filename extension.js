@@ -32,6 +32,17 @@ const insertSpaces = (string) => {
 };
 
 /**
+ * Function to convert component name to filename
+ * @param {string} componentPath
+ */
+const getComponentName = (componentPath) => {
+  if (!componentPath.includes("/")) return { componentName: componentPath, componentPath: null };
+
+  let files = componentPath.split("/");
+  return { componentName: files.pop(), componentPath: files.join("/") };
+};
+
+/**
  * Function to capitalize first latter
  * @param {string } string
  * @returns
@@ -54,14 +65,33 @@ function activate(context) {
     // If there is no component name, do not proceed
     if (!componentNameInput) return;
 
+    let { componentName: componentNameConverted, componentPath: selectedFolderPath } = getComponentName(componentNameInput);
+
+    if (!selectedFolderPath) {
+      // Folder selection is added for creating component
+      const options = {
+        canSelectMany: false,
+        openLabel: "Select",
+        canSelectFiles: false,
+        canSelectFolders: true,
+      };
+
+      const selectedFolder = await vscode.window.showOpenDialog(options);
+      selectedFolderPath = selectedFolder ? (selectedFolder[0] ? selectedFolder[0].fsPath : null) : null;
+    } else {
+      // If the user given a foldername in the filename itself, then append the ws path as prefix
+      selectedFolderPath = vscode.workspace.workspaceFolders[0].uri.fsPath + "/" + selectedFolderPath;
+    }
+
     // Convert the input into component name and component file name
-    const componentName = capitalizeFirstLetter(componentNameInput);
+    const componentName = capitalizeFirstLetter(componentNameConverted);
     const componentFileName = insertSpaces(componentName).toLowerCase();
 
     // Check user has a workspace enabled or not
     if (!vscode.workspace.workspaceFolders || !vscode.workspace.workspaceFolders[0]) return;
 
-    const wsPath = vscode.workspace.workspaceFolders[0].uri.fsPath + "/" + componentFileName; // gets the path of the first workspace folder
+	// Create the path from the ws path
+    const wsPath = (selectedFolderPath || vscode.workspace.workspaceFolders[0].uri.fsPath) + "/" + componentFileName; // gets the path of the first workspace folder
 
     // Write all files
     writeFile(wsPath, `${componentFileName}-view-controller.tsx`, viewController(componentName));
@@ -72,7 +102,7 @@ function activate(context) {
     writeFile(wsPath + "/__test__", `${componentFileName}-view.test.tsx`, testView(componentName, componentFileName));
 
     // Show message
-    vscode.window.showInformationMessage("Component Created");
+    vscode.window.showInformationMessage("Component Created " + wsPath);
   });
 
   context.subscriptions.push(disposable);
