@@ -7,7 +7,6 @@ React MVVM Generator extension is used to create MVVM components for React and R
 This is a very early version of React MVVM Generator Extension, and as of now it only supports to create components
 
 To use the extension, use the following commands
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
 * Open Command Line (`Shift+CMD+P` on macOS or `Shift+Ctrl+P` on Windows and Linux)
 * Type `RMV: Component` and Press `Enter`
 * You can provide a component name in the next screen,
