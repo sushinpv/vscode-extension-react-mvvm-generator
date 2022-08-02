@@ -5,7 +5,7 @@ module.exports = componentName => `interface I${componentName}ViewProps {}
  * @param props
  * @returns
  */
-function ${componentName}View( props:I${componentName}ViewProps ) {
+function ${componentName}View(props:I${componentName}ViewProps) {
   return <div></div>
 };
   

@@ -6,7 +6,7 @@ module.exports =
  * @param props
  * @returns
  */
-function use${componentName}ViewController( props:I${componentName}ViewControllerProps ) {
+function use${componentName}ViewController(props:I${componentName}ViewControllerProps) {
 };
 
 
