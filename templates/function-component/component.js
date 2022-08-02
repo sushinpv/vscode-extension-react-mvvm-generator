@@ -11,6 +11,8 @@ interface I${componentName}Props {}
  */
 function ${componentName}( props:I${componentName}Props ) {
     const { } = use${componentName}ViewController({});
+
+    return <${componentName}View />;
 };
   
-export default ${componentName};`
+export default ${componentName};`;
