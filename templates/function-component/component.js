@@ -9,7 +9,7 @@ interface I${componentName}Props {}
  * @param props
  * @returns
  */
-function ${componentName}(props:I${componentName}Props) {
+function ${componentName}(props:I${componentName}Props): JSX.Element {
     const { } = use${componentName}ViewController({});
 
     return <${componentName}View />;
