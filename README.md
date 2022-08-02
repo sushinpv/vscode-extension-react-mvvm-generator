@@ -19,6 +19,10 @@ To use the extension, use the following commands
 ## Release Notes
 
 This is the first and early release of React MVVM Generator extension.
+### 0.0.2
+
+Added support to create a component
+Added support for Functional component with Child option
 ### 0.0.1
 
 Added support to create a component
