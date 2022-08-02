@@ -9,9 +9,8 @@ interface I${componentName}Props {}
  * @param props
  * @returns
  */
-function ${componentName}({prop1,prop2}:I${componentName}Props) {
+function ${componentName}( props:I${componentName}Props ) {
     const { } = use${componentName}ViewController({});
-  
 };
   
 export default ${componentName};`
