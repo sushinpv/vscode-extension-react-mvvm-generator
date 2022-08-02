@@ -1,4 +1,4 @@
-module.exports = (componentName, componentFileName) =>`
+module.exports = (componentName, componentFileName) => `
 import ${componentName}View from "./${componentFileName}-view";
 import use${componentName}ViewController from "./${componentFileName}-view-controller";
 
